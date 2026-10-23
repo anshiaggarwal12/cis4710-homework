@@ -51,3 +51,4 @@ sim.wdb
 # python
 __pycache__/
 m5out/
+hw2-bpred-tags/run-*.log

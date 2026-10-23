@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HW2: sync, build, run hello",
+      "type": "shell",
+      "command": "cd /workspaces/cis4710-homework/hw2-bpred-tags && ./sync to-gem5 && cd /gem5 && scons --limit-ld-memory-usage --linker=gold build/RISCV/gem5.opt && cd /workspaces/cis4710-homework/hw2-bpred-tags && /gem5/build/RISCV/gem5.opt hw2.gem5.py hello 2>&1 | tee /workspaces/cis4710-homework/hw2-bpred-tags/run-hello.log",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "HW2: run qsort",
+      "type": "shell",
+      "command": "cd /workspaces/cis4710-homework/hw2-bpred-tags && /gem5/build/RISCV/gem5.opt hw2.gem5.py qsort 2>&1 | tee /workspaces/cis4710-homework/hw2-bpred-tags/run-qsort.log",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}
