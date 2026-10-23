@@ -1,0 +1,13 @@
+#!/bin/bash
+# Copy the tagged-predictor sources between this repo and /gem5.
+#   ./sync to-gem5    repo -> /gem5 (before building)
+#   ./sync from-gem5  /gem5 -> repo (after editing in /gem5; commit afterwards!)
+set -e
+REPO="$(cd "$(dirname "$0")" && pwd)/src"
+GEM5=/gem5/src/cpu/pred
+FILES="2bit_local.hh 2bit_local.cc BranchPredictor.py"
+case "$1" in
+  to-gem5)   for f in $FILES; do cp "$REPO/$f" "$GEM5/$f"; done; echo "repo -> /gem5 ok" ;;
+  from-gem5) for f in $FILES; do cp "$GEM5/$f" "$REPO/$f"; done; echo "/gem5 -> repo ok" ;;
+  *) echo "usage: $0 {to-gem5|from-gem5}"; exit 1 ;;
+esac

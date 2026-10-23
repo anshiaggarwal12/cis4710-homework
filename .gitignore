@@ -50,3 +50,4 @@ sim.wdb
 
 # python
 __pycache__/
+m5out/

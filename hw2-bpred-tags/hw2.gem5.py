@@ -119,8 +119,8 @@ with open("m5out/stats.txt") as f:
     print(f"MPKI            = {1000 * mispredicts / insts:.3f}")
 
     # sample code for reading your own counters
-    #tagMatches = stat(r"BranchPred\.tagMatches", stat_lines)
-    #tagMismatches = stat(r"BranchPred\.tagMismatches", stat_lines)
-    #print(f"Tag Matches     = {int(tagMatches)}")
-    #print(f"Tag Mismatches  = {int(tagMismatches)}")
+    tagMatches = stat(r"BranchPred\.tagMatches", stat_lines)
+    tagMismatches = stat(r"BranchPred\.tagMismatches", stat_lines)
+    print(f"Tag Matches     = {int(tagMatches)}")
+    print(f"Tag Mismatches  = {int(tagMismatches)}")
     pass
